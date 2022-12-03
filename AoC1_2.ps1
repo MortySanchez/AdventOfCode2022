@@ -1,8 +1,8 @@
 <#
     Author: MortySanchez
     Date: 02.12.2022
-    Title: AoC1_1.ps1
-    Description: AdventOfCode2022 Challenge Day 1 Part 1
+    Title: AoC1_2.ps1
+    Description: AdventOfCode2022 Challenge Day 1 Part 2
     Status: Solved!
 #>
 
@@ -32,10 +32,19 @@ for ([int] $index = 0; $index -lt $fileContent.Length; $index++) {
 }
 
 [int] $indexHighElf = 0
+[int] $indexSecondElf = 0
+[int] $indexThirdElf = 0
 for ([int] $index = 0; $index -lt $elfes.Length; $index++) {
     if ($elfes[$index] -gt $elfes[$indexHighElf]) {
+        $indexThirdElf = $indexSecondElf
+        $indexSecondElf = $indexHighElf
         $indexHighElf = $index
+        
     }
 }
 
-Write-Host ("Elf number {0} is the highest elf with {1} calories." -f ($indexHighElf + 1), $elfes[$indexHighElf])
+"Highest elf on index {0} with {1} calories." -f $indexHighElf, $elfes[$indexHighElf]
+"Second highest elf on index {0} with {1} calories." -f $indexSecondElf, $elfes[$indexSecondElf]
+"Third highest elf on index {0} with {1} calories." -f $indexThirdElf, $elfes[$indexThirdElf]
+
+"Total calories: {0}" -f ($elfes[$indexHighElf] + $elfes[$indexSecondElf] + $elfes[$indexThirdElf])

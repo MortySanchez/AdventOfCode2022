@@ -1,8 +1,8 @@
 """
     Title:     Advent of Code
     Challenge: Day 1 Part 1 
-    Status:    To be solved.
-    Solution:  
+    Status:    Solved.
+    Solution:  70296
 """
 
 elves = []

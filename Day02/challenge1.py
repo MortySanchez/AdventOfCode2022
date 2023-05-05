@@ -5,18 +5,23 @@
     Solution:  10994
 """
 
+# Dict to translate opponents hand
 opponent = { 
     "A":"Rock",
     "B":"Paper",
     "C":"Scissors"
 }
 
+    
+# Dict to translate players hand    
 player = {
     "X":"Rock",
     "Y":"Paper",
     "Z":"Scissors"
 }
 
+    
+# Dict to evaluate points for hand and result
 points = {
     "Rock":1,
     "Paper":2,
@@ -26,9 +31,12 @@ points = {
     "Draw":3
 }
 
+
+# Total score for solution
 total_score = 0
 
 
+# Get result, if player wins, looses or has a draw with opponent
 def get_result(opponent_hand, player_hand):
     if opponent[opponent_hand] == player[player_hand]:
         return "Draw"
@@ -38,14 +46,12 @@ def get_result(opponent_hand, player_hand):
         return "Loose"
         
 
+# Evaluate the round score for the player
 def get_score(result, player_hand):
     return points[result] + points[player[player_hand]]
     
 
-
-
-
-        
+# Main program
 
 index = 0
 round = 1

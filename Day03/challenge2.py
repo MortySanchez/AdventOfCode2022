@@ -52,3 +52,4 @@ with open("data.txt", "r") as file:
 
 print("==========")
 print(f"Sum: {sum_of_priorities}")
+print("==========")
